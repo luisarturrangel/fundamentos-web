@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400&display=swap');
+
+:root{
+    --fonte: "roboto"
+}
+
+*{
+    font-family: var(--fonte);
+}
+
+.main-header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+.hd-content{
+    margin: 0 2vw 0 2vw;
+    font-weight: bold;
+
+}
+
+.hd-logo{
+    font-weight: 200;
+    font-size: 24px;
+    letter-spacing: .1rem;
+}
+
+.nav-main{
+    width: 60vw;
+    list-style-type: none;
+    display: flex;
+    justify-content:space-around ;
+}
+
+.main-banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 45vh;
+}
+
+h1{
+    font-family: inherit;
+    font-size: inherit;
+}
+.bnn-titulo{
+    font-weight: 200;
+    font-size: 42px;
+}
+
+.bnn-text{
+    text-align: justify;
+    color: grey;
+    width: 35%;
+}
+
+.bnn-search{
+    height: 10vh;
+    display: flex;
+    width: 35%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bnn-sh-box{
+    display: flex;
+    padding: 0  0 0 10px;
+    height: 50%;
+    gap: .1rem;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.bnn-fild{
+    display: inline-block;
+    width: 25vw;
+}
+
+input[type="search"]{
+    border: none;
+    outline: none;
+}
+
+#btn-search{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    padding: 0.4rem 2rem 0.4rem 2rem;
+}
+
+
+
