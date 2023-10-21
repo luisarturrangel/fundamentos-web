@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yt clone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/189332a467.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div>LOGO</div>
+        <form action="">
+            <div class="align-search">
+                <div class="search-fild"><input type="search" placeholder="Pesquisar" id="search-input"></div>
+                <button type="submit" id="btn-search" title="results"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        <div class="navbar-conteiner">
+            <nav >
+                <ul class="header-itens">
+                    <a href="#">
+                        <li><i class="far fa-plus-square fa-lg"></i></li>
+                    </a>
+                    <a href="#">
+                        <li><i class="far fa-bell fa-lg"></i></li>
+                    </a>
+                    <a href="#">
+                        <li><i class="far fa-user-circle fa-lg"></i></li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="columns">
+                <div id="main-content">
+                    <div id="main-video">
+                        <video src="#" style="width: 1280px; height: 720px;" id="video-player"></video>
+                    </div>
+                    <div id="under-video">
+                        <div id="title-video"><h1>Titulo</h1></div>
+                        <div id="menu">
+                            <div id="likes">
+                                <button title="like" type="button" id="like"><i class="far fa-thumbs-up btn-likes"></i></button>
+                                <button title="dislike" type="button" id="dislike"><i class="far fa-thumbs-down btn-likes"></i></button>
+                            </div>
+                            <div><button title="compartilhar" type="button" id="share"><i class="far fa-share-square" id="compartilhar"></i></button></div>
+                            <div><button title="adicionar a lista" type="button" id="lista"><i class="fas fa-list-ul" id="salvar"></i></button></div>
+                        </div>
+                    </div>
+                    <div id="channel-stuff">
+                        <div id="channel-pf">
+                            <div><i class="far fa-user-circle fa-3x"></i></div>
+                            <div id="pf-link"><a href="#">Channel name</a></div>
+                        </div>
+                        <div id="sub-container">
+                            <button title="subscribe" type="button" id="btn-sub">Inscrever-se</button>
+                        </div>
+                    </div>
+                    <div id="descricao">
+                        <div id="desc-content">
+                            <div>
+                                <p>Visualizações
+                                    <?php
+                                        include("views.php");
+                                        echo $view;
+                                    ?>
+                                </p>
+                            </div>
+                            <div><p id="desc-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe voluptates provident possimus, magnam minima repellendus iusto magni vero! Quis dolores iure praesentium reprehenderit sint nostrum, odio vel expedita ab! Sit.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sidevideos-container">
+                    <div id="recomendados">
+                        <a href="#"><button type="button" class="rec-box">TODOS</button></a>
+                        <a href="#"><button type="button" class="rec-box">RPG</button></a>
+                        <a href="#"><button type="button" class="rec-box">RECOMENDADOS</button></a>
+                    </div>
+                    <div id="videos-sidescroll">
+                        <div id="video-box">
+                            <div class="img-video"><img src="" alt="placeholder"></div>
+                            <h1>titulo</h1>
+                            <p>Descrição</p>
+                        </div>
+                    </div>
+                    <?php
+                        
+                        for ($i = 1; $i <= 10; $i++) {
+                            echo '<div id="videos-sidescroll">
+                                    <div id="video-box">
+                                        <div class="img-video"><img src="" alt="placeholder"></div>
+                                        <h1>titulo</h1>
+                                        <p>Descrição</p>
+                                    </div>
+                                </div>';
+                            }
+                    ?>
+                </div>
+        </div>
+    </main>
+</body>
+</html>
