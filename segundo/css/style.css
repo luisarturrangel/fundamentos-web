@@ -247,3 +247,26 @@ button[type="button"]{
     height: 120px;
 }
 
+footer{
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    height: 8vh;
+    background-color: #353535;
+    color: white;
+    font-size: small;
+    text-align: center;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  footer a:hover{
+    color: #ccc;
+  }
