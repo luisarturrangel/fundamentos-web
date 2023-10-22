@@ -224,7 +224,7 @@ display: flex;
 #img1{
     width: 250px;
     height: 150px;
-    background-image: url("/imagens/Buggy_Anime_Post_Timeskip_Infobox.webp");
+    background-image: url("./imagens/Buggy_Anime_Post_Timeskip_Infobox.webp");
     background-repeat: no-repeat;
     background-size: 250px;
 }
@@ -232,7 +232,7 @@ display: flex;
 #img2{
     width: 250px;
     height: 150px;
-    background-image: url("/imagens/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp");
+    background-image: url("./imagens/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.webp");
     background-repeat: no-repeat;
     background-size: 250px;
 }
@@ -248,7 +248,7 @@ display: flex;
 #img4{
     width: 250px;
     height: 150px;
-    background-image: url("/imagens/Marshall_D._Teach_Anime_Pre_Timeskip_Infobox.webp");
+    background-image: url("./imagens/Marshall_D._Teach_Anime_Pre_Timeskip_Infobox.webp");
     background-repeat: no-repeat;
     background-size: 250px;
 }
