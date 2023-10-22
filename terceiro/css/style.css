@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap');
+
+:root{
+    --fonte: "Roboto";
+    --cor-primary: #43AED9;
+    --cor-secondary: #2B718C;
+    --cor1: #50D4F2;
+    --cor2: #3080BB;
+}
+
+*{
+    scroll-behavior: smooth;
+    font-family: var(--fonte);
+    margin: 0;
+    padding: 0;
+}
+
+.bg-hd{
+    display: flex;
+    justify-content: space-between;
+    padding: 5vh;
+    background-image: url("../imagens/pattern.svg");
+    
+}
+
+input[type="search"]{
+    border: none;
+    outline: none;
+}
+
+button[type="submit"]{
+    border: none;
+    outline: none;
+}
+
+#form-box{
+    display: flex;
+}
+
+#search-bar{
+    width: 50vw;
+    height: 20px;
+}
+
+#search-fild{
+    width: 100%;
+}
+
+#div-input{
+    background-color: white;
+    padding: 5px;
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 5px 5px 10px #0000007a;
+}
+
+#btn-search{
+    padding: 5px 20px;
+    border-radius: 8px 0 0 8px;
+}
+
+#btn-search:hover{
+    background-color: #ccc;
+}
+
+nav{
+    width: 140px;
+}
+
+#navbar{
+    list-style-type: none;
+    justify-content: space-between;
+    display: flex;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#sing{
+    font-weight: bold;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Remove default arrow */
+    background-image: url(...);
+    /* Add custom arrow */
+    background-color: transparent;
+    border:none;
+}
+
+select::-ms-expand {
+    display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+}
+
+#dropdown{
+display: flex;
+}
+
+#sub-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5vh;
+    background-color: var(--cor2);
+}
+
+.item{
+    padding: 20px;
+}
+
+.item a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-auxiliar{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.menu-auxiliar li{
+    list-style-type: none;
+}
+
+.menu-auxiliar a{
+    text-decoration: none;
+    color: black;
+}
+
+.hide{
+    display: none;
+}
+
+.item:hover + .hide{
+    display: block;
+}
+
+.hide:hover{
+    display: block;
+}
+
+#item2{
+    width: 20vw;
+}
+
+.navbar-sub{
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-sub li{
+    list-style-type: none;
+}
+
+.navbar-sub a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.navbar-sub a:hover{
+    color: #ccc;
+}
+
+#banner{
+    margin: 10px 0 10px 0;
+    display: flex;
+    background-color: var(--cor-secondary);
+    height: 60vh;
+    width: 100%;
+}
+
+#bn-text{
+    align-items: center;
+    text-align: justify;
+    width: 60vw;
+    background-color: var(--cor-secondary);
+}
+
+.bn-text-inner{
+    margin: 200px;
+    height: 100px;
+}
+
+#bn-img{
+    width: 40vw;
+}
+
+#personagens{
+    height: 50vh;
+    background-color: var(--cor1);
+}
+
+#per-flex{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20px 0 20px;
+
+
+}
+
+#personagens h1{
+    padding: 50px;
+}
+
+.caixa{
+    width: 250px;
+    height: 200px;
+    background-color: white;
+}
+
+.nome{
+    text-align: center;
+
+}
+
+#img1{
+    width: 250px;
+    height: 150px;
+    background-image: url("https://static.wikia.nocookie.net/onepiece/images/f/f7/Buggy_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/1000?cb=20220909015332&path-prefix=pt");
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+#img2{
+    width: 250px;
+    height: 150px;
+    background-image: url("https://static.wikia.nocookie.net/onepiece/images/6/6d/Monkey_D._Luffy_Anime_Post_Timeskip_Infobox.png/revision/latest/scale-to-width-down/239?cb=20190303115209&path-prefix=pt");
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+#img3{
+    width: 250px;
+    height: 150px;
+    background-image: url("https://nerdhits.com.br/wp-content/uploads/2022/06/one-piece-shanks-2.jpg");
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+#img4{
+    width: 250px;
+    height: 150px;
+    background-image: url("https://static.wikia.nocookie.net/onepiece/images/e/e4/Marshall_D._Teach_Anime_Pre_Timeskip_Infobox.png/revision/latest/scale-to-width-down/1000?cb=20181207210756&path-prefix=pt");
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+#return{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    color: var(--cor-primary);
+}
+#span-return a{
+    text-decoration: none;
+}
+
+footer{
+    color: white;
+    display: flex;
+}
+
+.footer-item{
+    border: .5px solid black;
+    padding-top: 30px;
+    text-align: center;
+    width: 25vw;
+    height: 15vh;
+    background-color: #353535;
+}
+
+
+
+
