@@ -178,23 +178,31 @@ display: flex;
 }
 
 #bn-text{
+    display: flex;
     align-items: center;
+    justify-content: center;
     text-align: justify;
     width: 60vw;
     background-color: var(--cor-secondary);
 }
 
+
 .bn-text-inner{
-    margin: 200px;
-    height: 100px;
+    width: 400px;
+    display: flex;
+    text-align: justify;
 }
 
 #bn-img{
     width: 40vw;
 }
 
+#bn-img > img{
+    width: 90%;
+}
+
 #personagens{
-    height: 50vh;
+    height: 450px;
     background-color: var(--cor1);
 }
 
