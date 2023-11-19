@@ -1,0 +1,17 @@
+*{
+    scroll-behavior: smooth;
+}
+
+li{
+    list-style: none;
+}
+
+#search-input{
+    width: 55vw;
+}
+
+.items-drop{
+    width: auto;
+    justify-content: flex-end;
+}
+
