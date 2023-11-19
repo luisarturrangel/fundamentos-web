@@ -1,5 +1,5 @@
 # fundamentos-web
-disciplina do CEET vasco coutinho
+disciplina do CEET vasco coutinho\n
 exercício para testar conhecimntos de layout
 
 primeiro site  [clique aqui](https://luisarturrangel.github.io/fundamentos-web/primeiro/index.html "primeiro site")
