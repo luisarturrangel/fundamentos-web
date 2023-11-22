@@ -1,0 +1,168 @@
+{
+  "itens": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "titulo": "Gabinete Gamer Rise Mode Glass 06X, Mid Tower",
+        "preco": 200.0,
+        "image": { "fields": { "file": { "url": "./imagens/gabinete.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "titulo": "Gabinete Gamer Rise Mode Galaxy Glass, Mid Tower",
+        "preco": 379.99,
+        "image": { "fields": { "file": { "url": "./imagens/gabinete2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "titulo": "Mouse Gamer Sem Fio Logitech G PRO Wireless LIGHTSPEED",
+        "preco": 469.99,
+        "image": { "fields": { "file": { "url": "./imagens/mouse.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "titulo": "Mouse Gamer Logitech G403 HERO com RGB LIGHTSYNC",
+        "preco": 199.99,
+        "image": { "fields": { "file": { "url": "./imagens/mouse2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "titulo": "Teclado Mecânico Gamer HyperX Alloy MKW100",
+        "preco": 269.99,
+        "image": { "fields": { "file": { "url": "./imagens/teclado.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "titulo": "Teclado Mecânico Gamer Husky Gaming Blizzard, 60%",
+        "preco": 209.99,
+        "image": { "fields": { "file": { "url": "./imagens/teclado2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "titulo": "Headset Sem Fio Gamer HyperX Cloud Stinger Core Som Surround 7.1",
+        "preco": 349.99,
+        "image": { "fields": { "file": { "url": "./imagens/headset.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "titulo": "Headset Gamer Havit, Drivers 53mm",
+        "preco": 169.99,
+        "image": { "fields": { "file": { "url": "./imagens/headset2.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "9" },
+      "fields": {
+        "titulo": "Placa de Vídeo RTX 3060 TI Ventus 3X 8GD6X OC MSI NVIDIA GeForce, 8GB GDDR6X",
+        "preco": 2189.99,
+        "image": {
+          "fields": { "file": { "url": "./imagens/placadevideo.jpg" } }
+        }
+      }
+    },
+    {
+      "sys": { "id": "10" },
+      "fields": {
+        "titulo": "Placa de Vídeo GT 1030 MSI NVIDIA GeForce 2GD4 LP OC 2GB, DDR4",
+        "preco": 429.99,
+        "image": {
+          "fields": { "file": { "url": "./imagens/placadevideo2.jpg" } }
+        }
+      }
+    },
+    {
+      "sys": { "id": "11" },
+      "fields": {
+        "titulo": "Processador AMD Ryzen 5 5600, 3.5GHz (4.4GHz Max Turbo), Cache 35MB, AM4",
+        "preco": 849.99,
+        "image": {
+          "fields": { "file": { "url": "./imagens/processador.jpg" } }
+        }
+      }
+    },
+    {
+        "sys": { "id": "12" },
+        "fields": {
+          "titulo": "Processador Intel Core i5-12400F, 2.5GHz (4.4GHz Max Turbo), Cache 18MB, LGA 1700",
+          "preco": 928.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/processador2.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "13" },
+        "fields": {
+          "titulo": "Placa-Mãe MSI MPG B550 Gaming Plus, AMD AM4, ATX",
+          "preco": 879.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/placamae.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "14" },
+        "fields": {
+          "titulo": "Placa Mãe Gigabyte B660M Aorus PRO, Intel LGA 1700, mATX, DDR4, M.2 NVME",
+          "preco": 939.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/placamae2.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "15" },
+        "fields": {
+          "titulo": "Fonte Corsair CV750 750W, 80 Plus Bronze",
+          "preco": 487.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/fonte.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "16" },
+        "fields": {
+          "titulo": "Fonte De Alimentação Gigabyte Aorus Gp-ap1200pm, 1200 W, Platinum",
+          "preco": 3850.00,
+          "image": {
+            "fields": { "file": { "url": "./imagens/fonte2.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "17" },
+        "fields": {
+          "titulo": "Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto",
+          "preco": 138.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/memoria.jpg" } }
+          }
+        }
+      },
+      {
+        "sys": { "id": "18" },
+        "fields": {
+          "titulo": "Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto",
+          "preco": 138.99,
+          "image": {
+            "fields": { "file": { "url": "./imagens/memoria.jpg" } }
+          }
+        }
+      }
+  ]
+}
