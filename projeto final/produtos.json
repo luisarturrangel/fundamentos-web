@@ -157,10 +157,10 @@
       {
         "sys": { "id": "18" },
         "fields": {
-          "titulo": "Memória Kingston Fury Beast, 8GB, 3200MHz, DDR4, CL16, Preto",
-          "preco": 138.99,
+          "titulo": "Memória Kingston Fury Beast, RGB, 16GB, 3200MHz, DDR4, CL16, Preto",
+          "preco": 279.99,
           "image": {
-            "fields": { "file": { "url": "./imagens/memoria.jpg" } }
+            "fields": { "file": { "url": "./imagens/memoria2.jpg" } }
           }
         }
       }
