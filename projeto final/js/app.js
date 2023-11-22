@@ -2,10 +2,14 @@ const addBtn = document.querySelector(".cart-btn");
 const cardContent = document.querySelector(".card");
 const productsDom = document.querySelector(".grid-layout-cards");
 const cartNum = document.querySelector("cart-numb");
-let reaisCur = new Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'})
-
+let reaisCur = new Intl.NumberFormat("pt-br", {
+  style: "currency",
+  currency: "BRL",
+});
 
 let cart = [];
+
+let buttonsDom = [];
 
 class Products {
   async getProducts() {
@@ -33,15 +37,21 @@ class UI {
       result += `
         <div class="col">
             <div class="card h-100" style="width: 12rem;">
-                <img src=${product.image} class="card-img-top" alt="${product.title}">
+                <img src=${product.image} class="card-img-top" alt="${
+        product.title
+      }">
                 <div class="card-body">
                     <p class="card-text">${product.title}</p> 
                 </div>
                 <div class="card-title card-footer card-price">
-                        <h5 class="card-title" id="card-price" name="card-price">${reaisCur.format(product.price)}</h5>
+                        <h5 class="card-title" id="card-price" name="card-price">${reaisCur.format(
+                          product.price
+                        )}</h5>
                 </div>    
                 <div class="card-footer">
-                    <button class="btn btn-primary cart-btn" data-id=${product.id}>Adicionar ao carrinho</button>
+                    <button class="btn btn-primary cart-btn" data-id=${
+                      product.id
+                    }>Adicionar ao carrinho</button>
                 </div>
             </div>
         </div>
@@ -49,12 +59,36 @@ class UI {
     });
     productsDom.innerHTML = result;
   }
+  getButtons() {
+    const buttons = [...document.querySelectorAll(".cart-btn")];
+    buttonsDom = buttons;
+    buttons.forEach((button) => {
+      let id = button.dataset.id;
+      let inCart = cart.find((item) => item.id === id);
+      if (inCart) {
+        button.innerText = "No Carrinho";
+        button.disabled = true;
+      } else {
+        button.addEventListener("click", (event) => {
+          event.target.innerText = "No Carrinho";
+          event.target.disabled = true;
+          let cartItem = {...Storage.getProduct(id), amount: 1};
+          cart = [...cart, cartItem];
+        });
+      }
+    });
+  }
 }
 
 class Storage {
-    static saveProducts(products) {
-        localStorage.setItem("products",JSON.stringify(products));
-    }
+  static saveProducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem("products"));
+    return products.find((product) => product.id === id);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,5 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
   products.getProducts().then((products) => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
-});
+    ui.getButtons();
+  });
 });
