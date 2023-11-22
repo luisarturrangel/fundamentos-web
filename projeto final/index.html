@@ -13,9 +13,18 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="nav bg-dark">
-      1
-    </div>
+    <nav class="navbar bg-dark">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Pesquisa">
+          <button class="btn btn-outline-success" type="submit">Pesquisa</button>
+        </form>
+        <div>
+          <a class="navbar-brand"><i class="fas fa-shopping-cart"></i></a>
+          <span class="cart-numb"></span>
+        </div>
+      </div>
+    </nav>
     <div class="container mt-4 mb-4">
       <div class="card-group row row-cols-md-4 g-4 grid-layout-cards"></div>
     </div>

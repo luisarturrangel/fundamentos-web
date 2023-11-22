@@ -1,7 +1,9 @@
 const addBtn = document.querySelector(".cart-btn");
 const cardContent = document.querySelector(".card");
 const productsDom = document.querySelector(".grid-layout-cards");
+const cartNum = document.querySelector("cart-numb");
 let reaisCur = new Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'})
+
 
 let cart = [];
 
@@ -49,12 +51,19 @@ class UI {
   }
 }
 
-class Storage {}
+class Storage {
+    static saveProducts(products) {
+        localStorage.setItem("products",JSON.stringify(products));
+    }
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   const products = new Products();
 
   //   get all products
-  products.getProducts().then((products) => ui.displayProducts(products));
+  products.getProducts().then((products) => {
+    ui.displayProducts(products);
+    Storage.saveProducts(products);
+});
 });
