@@ -1,7 +1,8 @@
 const addBtn = document.querySelector(".cart-btn");
 const cardContent = document.querySelector(".card");
 const productsDom = document.querySelector(".grid-layout-cards");
-const cartNum = document.querySelector("cart-numb");
+const cartNum = document.querySelector(".cartNum");
+
 let reaisCur = new Intl.NumberFormat("pt-br", {
   style: "currency",
   currency: "BRL",
@@ -65,6 +66,7 @@ class UI {
     buttons.forEach((button) => {
       let id = button.dataset.id;
       let inCart = cart.find((item) => item.id === id);
+      Storage.saveCart(cart);
       if (inCart) {
         button.innerText = "No Carrinho";
         button.disabled = true;
@@ -72,12 +74,32 @@ class UI {
         button.addEventListener("click", (event) => {
           event.target.innerText = "No Carrinho";
           event.target.disabled = true;
-          let cartItem = {...Storage.getProduct(id), amount: 1};
+          let cartItem = { ...Storage.getProduct(id), amount: 1 };
           cart = [...cart, cartItem];
+          
+          Storage.saveCart(cart);
+          this.setCartValues(cart);
+          this.addCartItem(cartItem);
         });
       }
     });
   }
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+    cart.map((item) => {
+      tempTotal += item.price * item.amount;
+      itemsTotal += item.amount;
+    });
+    cartNum.innerText = itemsTotal;
+    Storage.saveItemsTotal(tempTotal);
+    console.log(tempTotal, cartNum);
+  }
+  addCartItem(item) {
+
+  }
+
+  
 }
 
 class Storage {
@@ -89,6 +111,15 @@ class Storage {
     let products = JSON.parse(localStorage.getItem("products"));
     return products.find((product) => product.id === id);
   }
+
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  static saveItemsTotal(cartNum) {
+    localStorage.setItem("totalCart",JSON.stringify(cartNum));
+  }
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -100,5 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
     ui.getButtons();
+
   });
 });

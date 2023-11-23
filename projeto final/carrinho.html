@@ -10,25 +10,34 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav class="navbar bg-dark">
       <div class="container-fluid">
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Pesquisa">
-          <button class="btn btn-outline-success" type="submit">Pesquisa</button>
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Pesquisa"
+            aria-label="Pesquisa"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Pesquisa
+          </button>
         </form>
-        <div class="position-relative mt-2 me-2">
-          <a href="carrinho.html" class="navbar-brand linkCart"><i class="fas fa-shopping-cart"></i></a>
-          <div class="cartNum translate-middle badge rounded-circle bg-secondary position-absolute top-0 start-100 shadow">0</div>
-        </div>
+        <a href="index.html"><i class="far fa-window-close"></i></a>
       </div>
     </nav>
-    <div class="container mt-4 mb-4">
-      <div class="card-group row row-cols-md-4 g-4 grid-layout-cards"></div>
+
+    <div class="listaTotal container row justify-content-center">
+      
     </div>
-    <script src="js/app.js"></script>
+    <div class="container">
+      <span class="cart-total-value">0</span>
+    </div>
+
+    <script src="js/cart.js"></script>
     <script
       src="https://kit.fontawesome.com/189332a467.js"
       crossorigin="anonymous"
