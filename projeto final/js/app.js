@@ -66,7 +66,6 @@ class UI {
     buttons.forEach((button) => {
       let id = button.dataset.id;
       let inCart = cart.find((item) => item.id === id);
-      Storage.saveCart(cart);
       if (inCart) {
         button.innerText = "No Carrinho";
         button.disabled = true;
@@ -95,6 +94,12 @@ class UI {
     Storage.saveItemsTotal(tempTotal);
     console.log(tempTotal, cartNum);
   }
+
+  reloadItems(){
+    let cart = JSON.parse(localStorage.getItem('cart'));
+
+  }
+
   addCartItem(item) {
 
   }
