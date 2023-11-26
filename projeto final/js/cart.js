@@ -1,6 +1,7 @@
 
 const cartTotalValue = document.querySelector(".cart-total-value");
 const listaTotal = document.querySelector(".listaTotal");
+const cartDiscount = document.querySelector(".desconto-valor");
 
 let reaisCur = new Intl.NumberFormat("pt-br", {
     style: "currency",
@@ -39,7 +40,8 @@ class UI {
         
     });
     listaTotal.innerHTML = result;
-    cartTotalValue.innerText = reaisCur.format(TotalValue)
+    cartTotalValue.innerText = reaisCur.format(TotalValue);
+    cartDiscount.innerText = reaisCur.format( TotalValue - (TotalValue * 0.15));
   }
 }
 
