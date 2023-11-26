@@ -2,6 +2,10 @@
 const cartTotalValue = document.querySelector(".cart-total-value");
 const listaTotal = document.querySelector(".listaTotal");
 
+let reaisCur = new Intl.NumberFormat("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  });
 
 class UI {
    getItemsTotal() {
@@ -22,7 +26,7 @@ class UI {
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">${item.title}</h5>
-                        <p class="card-text">${item.price}</p>
+                        <p class="card-text">${reaisCur.format(item.price)}</p>
                     </div>
                 </div>
             </div>

@@ -90,14 +90,35 @@ class UI {
       tempTotal += item.price * item.amount;
       itemsTotal += item.amount;
     });
+    Storage.saveItemsCount(itemsTotal);
     cartNum.innerText = itemsTotal;
     Storage.saveItemsTotal(tempTotal);
-    console.log(tempTotal, cartNum);
+    
   }
 
   reloadItems(){
-    let cart = JSON.parse(localStorage.getItem('cart'));
+    const buttons = [...document.querySelectorAll(".cart-btn")];
+    buttonsDom = buttons;
+    let storeCart = JSON.parse(localStorage.getItem('cart'));
+    buttons.forEach((button) => {
+      let id = button.dataset.id;
+      let storeCart = JSON.parse(localStorage.getItem("cart"))
+      let inCart = storeCart.find((item) => item.id === id);
+      if (inCart) {
+        button.innerText = "No Carrinho";
+        button.disabled = true;
+      } else {
+        button.addEventListener("click", (event) => {
+          event.target.innerText = "No Carrinho";
+          event.target.disabled = true;
+        });
+      }
+    });
+  }
 
+  reloadCount(){
+    let Count = JSON.parse(localStorage.getItem('itemsCount'));
+    cartNum.innerHTML = Count;
   }
 
   addCartItem(item) {
@@ -125,6 +146,10 @@ class Storage {
     localStorage.setItem("totalCart",JSON.stringify(cartNum));
   }
 
+  static saveItemsCount(itemCount) {
+    localStorage.setItem("itemsCount", JSON.stringify(itemCount))
+  }
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -136,6 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
     ui.getButtons();
+    ui.reloadItems();
+    ui.reloadCount();
 
   });
 });
