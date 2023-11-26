@@ -10,10 +10,14 @@ let reaisCur = new Intl.NumberFormat("pt-br", {
 class UI {
    getItemsTotal() {
     let itemsTotal = JSON.parse(localStorage.getItem("totalCart"));
-    return cartTotalValue.innerText = reaisCur.format(itemsTotal);
+    return itemsTotal;
   }
 
-  displayCart() {
+  displayDiscount(){
+
+  }
+
+  displayCart(TotalValue) {
     let cart = JSON.parse(localStorage.getItem('cart'));
     let result = "";
     cart.forEach((item) =>{
@@ -35,6 +39,7 @@ class UI {
         
     });
     listaTotal.innerHTML = result;
+    cartTotalValue.innerText = reaisCur.format(TotalValue)
   }
 }
 
@@ -46,7 +51,6 @@ class Storage {
 
 document.addEventListener("DOMContentLoaded", () => {
     const ui = new UI;
-    ui.getItemsTotal();
-    ui.displayCart();
+    ui.displayCart(ui.getItemsTotal());
         
 });
