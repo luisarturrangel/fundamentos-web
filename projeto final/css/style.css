@@ -19,3 +19,11 @@ body{
     content: 'TOTAL: ';
     color: green;
 }
+
+.carousel-item img{
+    width: auto;
+    height: 350px;
+    max-height: 350px;
+    margin: auto; 
+    display: block;
+    }
