@@ -17,5 +17,19 @@ body{
 }
 .cart-total-value::before{
     content: 'TOTAL: ';
+    color: white;
+}
+.desconto-valor::before{
+    content:'Desconto no Pix: ';
+    color:white;
+}
+.desconto-valor{
     color: green;
+}
+.carousel-item img{
+    width: auto;
+    height: 350px;
+    max-height: 350px;
+    margin: auto; 
+    display: block;
 }
