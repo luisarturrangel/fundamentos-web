@@ -26,14 +26,10 @@ body{
 .desconto-valor{
     color: green;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 7ad410cd9613d537adf11b0a9242a778ce3944bb
 .carousel-item img{
     width: auto;
     height: 350px;
     max-height: 350px;
     margin: auto; 
     display: block;
-    }
+}
