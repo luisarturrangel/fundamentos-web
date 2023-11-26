@@ -15,3 +15,7 @@ body{
 .link-verde:hover{
     color: rgb(36, 247, 36);
 }
+.cart-total-value::before{
+    content: 'TOTAL: ';
+    color: green;
+}
