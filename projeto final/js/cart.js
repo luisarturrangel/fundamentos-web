@@ -10,7 +10,7 @@ let reaisCur = new Intl.NumberFormat("pt-br", {
 class UI {
    getItemsTotal() {
     let itemsTotal = JSON.parse(localStorage.getItem("totalCart"));
-    return cartTotalValue.innerText = parseFloat(itemsTotal.toFixed(2));
+    return cartTotalValue.innerText = reaisCur.format(itemsTotal);
   }
 
   displayCart() {
