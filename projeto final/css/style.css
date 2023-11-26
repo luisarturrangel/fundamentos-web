@@ -6,3 +6,12 @@
 .fa-shopping-cart{
     color: white;
 }
+body{
+    background-color: rgb(29, 28, 28);
+}
+.link-verde{
+    color: green;
+}
+.link-verde:hover{
+    color: rgb(36, 247, 36);
+}
