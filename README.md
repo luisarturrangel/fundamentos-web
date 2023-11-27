@@ -2,12 +2,12 @@
 disciplina do CEET Vasco Coutinho\
 exercícios para testar conhecimentos de layout
 
-primeiro site  [clique aqui](https://luisarturrangel.github.io/fundamentos-web/primeiro/index.html "primeiro site")
+primeiro site >> [clique aqui](https://luisarturrangel.github.io/fundamentos-web/primeiro/index.html "primeiro site")
 
-segundo site   [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/segundo/index.html "segundo site")
+segundo site >> [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/segundo/index.html "segundo site")
 
-terceiro site  [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/terceiro/index.html "terceiro site")
+terceiro site >> [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/terceiro/index.html "terceiro site")
 
-site bootstrap [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/bootstrap/index.html "site bootstrap")
+site bootstrap >> [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/bootstrap/index.html "site bootstrap")
 
-projeto final [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/projeto final/ "proejto final")
+projeto final >> [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/projeto%20final/ "projeto final")
