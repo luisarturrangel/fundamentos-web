@@ -10,4 +10,4 @@ terceiro site  [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/t
 
 site bootstrap [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/bootstrap/index.html "site bootstrap")
 
-projeto final [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/projeto%final/ "proejto final")
+projeto final [Clique aqui](https://luisarturrangel.github.io/fundamentos-web/projeto final/ "proejto final")
