@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "creditcard.js": "^3.0.33",
+    "type": "module"
+  }
+}

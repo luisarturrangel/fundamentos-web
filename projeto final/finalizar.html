@@ -32,17 +32,53 @@
       </div>
     </nav>
     <div class="container d-flex justify-content-center">
-      <form action="" class="w-50">
+      <form action="#" method="post" class="w-50 credit-form">
+        <label for="credit-card-number" class="mt-4">Nome no Cartão</label>
+        <input
+          class="form-control w-100 mt-4"
+          name="credit-card-name"
+          type="text"
+          placeholder="nome do Cartão"
+          aria-label="nome do Cartão"
+        />
         <label for="credit-card-number" class="mt-4">Número do Cartão</label>
         <input
           class="form-control w-100 mt-4"
           name="credit-card-number"
           type="text"
-          placeholder="Default input"
-          aria-label="default input example"
+          placeholder="Número do Cartão"
+          aria-label="Número do Cartão"
         />
+        <div class="container d-flex justify-content-between">
+            <div>
+                <div><label for="credit-card-expiration" class="mt-4">Data de Epiração</label></div>
+                <div>
+                    <input
+                      class="form-control w-100 mt-4"
+                      name="credit-card-expiration"
+                      type="date"
+                      placeholder="Data"
+                      aria-label="data"
+                    />
+                </div>
+            </div>
+            <div>
+                <div><label for="credit-card-number" class="mt-4">Número de segurança</label></div>
+                <div>
+                    <input
+                      class="form-control w-100 mt-4"
+                      name="credit-card-code"
+                      type="text"
+                      placeholder="CVV"
+                      aria-label="codigo"
+                    />
+                </div>
+            </div>
+        </div>
+        <button type="submit" value="Submit" class="btn btn-primary mt-4">Pagar</button>
       </form>
     </div>
+    <script src="./js/finalizar.js" type="module"></script>
     <script
       src="https://kit.fontawesome.com/189332a467.js"
       crossorigin="anonymous"
