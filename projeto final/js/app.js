@@ -38,9 +38,13 @@ class UI {
       result += `
         <div class="col">
             <div class="card h-100" style="width: 12rem;">
-                <img src=${product.image} class="card-img-top" alt="${
+                <a href="produto.html" class="link-product" data-id=${
+                  product.id
+                }>
+                  <img src=${product.image} class="card-img-top" alt="${
         product.title
       }">
+                </a>
                 <div class="card-body">
                     <p class="card-text">${product.title}</p> 
                 </div>
@@ -66,6 +70,7 @@ class UI {
     buttons.forEach((button) => {
       let id = button.dataset.id;
       let inCart = cart.find((item) => item.id === id);
+      Storage.saveCart(cart);
       if (inCart) {
         button.innerText = "No Carrinho";
         button.disabled = true;
@@ -75,7 +80,7 @@ class UI {
           event.target.disabled = true;
           let cartItem = { ...Storage.getProduct(id), amount: 1 };
           cart = [...cart, cartItem];
-          
+
           Storage.saveCart(cart);
           this.setCartValues(cart);
           this.addCartItem(cartItem);
@@ -90,42 +95,37 @@ class UI {
       tempTotal += item.price * item.amount;
       itemsTotal += item.amount;
     });
-    Storage.saveItemsCount(itemsTotal);
     cartNum.innerText = itemsTotal;
     Storage.saveItemsTotal(tempTotal);
-    
-  }
-
-  reloadItems(){
-    const buttons = [...document.querySelectorAll(".cart-btn")];
-    buttonsDom = buttons;
-    let storeCart = JSON.parse(localStorage.getItem('cart'));
-    buttons.forEach((button) => {
-      let id = button.dataset.id;
-      let storeCart = JSON.parse(localStorage.getItem("cart"))
-      let inCart = storeCart.find((item) => item.id === id);
-      if (inCart) {
-        button.innerText = "No Carrinho";
-        button.disabled = true;
-      } else {
-        button.addEventListener("click", (event) => {
-          event.target.innerText = "No Carrinho";
-          event.target.disabled = true;
-        });
-      }
-    });
-  }
-
-  reloadCount(){
-    let Count = JSON.parse(localStorage.getItem('itemsCount'));
-    cartNum.innerHTML = Count;
+    console.log(tempTotal, cartNum);
   }
 
   addCartItem(item) {
-
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    div.innerText = `
+    
+      `;
   }
 
-  
+  redirectProduct() {
+    const links = [...document.querySelectorAll(".link-product")];
+    const products = JSON.parse(localStorage.getItem("products"));
+    links.forEach((link) => {
+      let id = link.dataset.id;
+      let selected = products.find((item) => item.id === id);
+      if (selected) {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          let url = link.href;
+          let newUrl = new URL(url);
+          newUrl.searchParams.set('id', `${id}`)
+          window.location.assign(newUrl);
+        });
+      }
+    });
+    return newUrl
+  }
 }
 
 class Storage {
@@ -143,13 +143,8 @@ class Storage {
   }
 
   static saveItemsTotal(cartNum) {
-    localStorage.setItem("totalCart",JSON.stringify(cartNum));
+    localStorage.setItem("totalCart", JSON.stringify(cartNum));
   }
-
-  static saveItemsCount(itemCount) {
-    localStorage.setItem("itemsCount", JSON.stringify(itemCount))
-  }
-
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -161,8 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
     ui.getButtons();
-    ui.reloadItems();
-    ui.reloadCount();
-
+    ui.redirectProduct();
   });
 });
