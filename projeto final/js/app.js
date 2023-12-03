@@ -36,7 +36,7 @@ class UI {
     let result = "";
     products.forEach((product) => {
       result += `
-        <div class="col">
+        <div class="col mx-auto">
             <div class="card h-100" style="width: 12rem;">
                 <a href="produto.html" class="link-product" data-id=${
                   product.id
