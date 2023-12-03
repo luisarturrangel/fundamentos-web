@@ -3,7 +3,7 @@
  * @license MIT
  * @author ContaAzul (contaazul.com)
  */
-(function(g,f){typeof exports==='object'&&typeof module!=='undefined'?f(exports):typeof define==='function'&&define.amd?define(['exports'],f):(g=typeof globalThis!=='undefined'?globalThis:g||self,f(g.CreditCard={}));}(this,(function(exports){'use strict';var CARDS = [{
+var CARDS = [{
   name: 'Banescard',
   bins: /^(603182)[0-9]{10,12}/,
   codeLength: 3
@@ -154,4 +154,136 @@ function sumNumber(number) {
     sum += (even = !even) ? computed[digit] : digit;
   }
   return sum;
-}exports.getCreditCardNameByNumber=getCreditCardNameByNumber;exports.isExpirationDateValid=isExpirationDateValid;exports.isSecurityCodeValid=isSecurityCodeValid;exports.isValid=isValid;Object.defineProperty(exports,'__esModule',{value:true});})));
+}
+
+
+class Form {
+  validation() {
+    const form = document.querySelector(".credit-form");
+    const cardNum = form.elements["credit-card-number"];
+    const number = form.elements["credit-card-number"];
+    const dateE = form.elements["credit-card-expiration"];
+    const code = form.elements["credit-card-code"];
+    const icon = document.querySelector(".number-icon");
+    const div = document.querySelector(".form-payment");
+
+    cardNum.addEventListener("keyup", (e) => {
+      let currentValue = e.target.value;
+      let iconName = getCreditCardNameByNumber(currentValue);
+      switch(icon){
+        case 'Mastercard':
+          icon.innerHTML = `<i class="fab fa-cc-mastercard fa-3x mt-2"></i>`
+        break;
+        case 'Visa':
+          icon.innerHTML = `<i class="	fab fa-cc-visa fa-3x mt-2"></i>`
+        break;
+      }
+      
+      
+      
+    })
+
+    cardNum.oninput = (e) => {
+      let cursorPos = e.target.selectionStart
+      let currentValue = e.target.value
+      let cleanValue = currentValue.replace(/\D/g, "");
+      let formatInput = patternMatch({
+          input: cleanValue,
+          template: "xxxx xxxx xxxx xxxx"
+       });
+      
+      e.target.value = formatInput
+      
+      let isBackspace = (e?.data==null) ? true: false;
+      let nextCusPos = nextDigit(formatInput, cursorPos, isBackspace);
+      
+      cardNum.setSelectionRange(nextCusPos+1, nextCusPos+1);
+    };
+    function nextDigit(input, cursorpos, isBackspace) {
+      if (isBackspace){
+        for (let i = cursorpos-1; i > 0; i--) {
+        if(/\d/.test(input[i])){
+          return i
+        }
+      }
+      }else{
+        for (let i = cursorpos-1; i < input.length; i++) {
+        if(/\d/.test(input[i])){
+          return i
+        }
+      }
+      }
+      
+      return cursorpos
+    }
+    
+    function patternMatch({
+      input,
+      template
+    }) {
+      try {
+    
+        let j = 0;
+        let plaintext = "";
+        let countj = 0;
+        while (j < template.length) {
+          // code block to be
+          
+          if (countj > input.length - 1) {
+            template = template.substring(0, j);
+            break;
+          }
+    
+          if (template[j] == input[j]) {
+            j++;
+            countj++;
+            continue;
+          }
+    
+          if (template[j] == "x") {
+            template = template.substring(0, j) + input[countj] + template.substring(j + 1);
+            plaintext = plaintext + input[countj];
+            countj++;
+          }
+          j++;
+        }
+    
+        return template
+     
+      } catch {
+        return ""
+      }
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      let isCreditNumber = isValid(number.value);
+      let isCreditDate = isExpirationDateValid(dateE.value.split("-")[1], dateE.value.split("-")[0]);
+      let isCreditCode = isSecurityCodeValid(number.value, code.value);
+      let validate = isCreditNumber && isCreditDate && isCreditCode;
+      if(validate){
+        div.innerHTML = `<h1 class="text-center">Confirmando Compra</h1>
+        <div class="d-flex justify-content-center align-items-center m-2">
+          <li class="fas fa-spinner fa-pulse m-0 p-0"></li>
+        </div>`;
+        const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+        const repeatedGreetings = async () => {
+          await sleep(5000);
+          div.innerHTML = `<h1 class="text-center text-success">Compra Realizada </h1>`;
+          await sleep(1000);
+          window.location.assign("index.html");
+        }
+        repeatedGreetings()
+      }else{
+        alert("Erro com os dados");
+      }
+      
+    });
+    
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = new Form();
+  form.validation();
+});

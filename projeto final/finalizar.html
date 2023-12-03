@@ -10,6 +10,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/finalizar.css" />
   </head>
   <body>
     <nav class="navbar bg-dark">
@@ -31,8 +32,8 @@
         </div>
       </div>
     </nav>
-    <div class="container d-flex justify-content-center">
-      <form action="#" method="post" class="w-50 credit-form">
+    <div class="container d-flex justify-content-center form-payment">
+      <form action="#" method="post" class="w-50 credit-form" autocomplete="on">
         <label for="credit-card-number" class="mt-4">Nome no Cartão</label>
         <input
           class="form-control w-100 mt-4"
@@ -40,45 +41,63 @@
           type="text"
           placeholder="nome do Cartão"
           aria-label="nome do Cartão"
+          required
         />
         <label for="credit-card-number" class="mt-4">Número do Cartão</label>
-        <input
-          class="form-control w-100 mt-4"
-          name="credit-card-number"
-          type="text"
-          placeholder="Número do Cartão"
-          aria-label="Número do Cartão"
-        />
-        <div class="container d-flex justify-content-between">
-            <div>
-                <div><label for="credit-card-expiration" class="mt-4">Data de Epiração</label></div>
-                <div>
-                    <input
-                      class="form-control w-100 mt-4"
-                      name="credit-card-expiration"
-                      type="date"
-                      placeholder="Data"
-                      aria-label="data"
-                    />
-                </div>
-            </div>
-            <div>
-                <div><label for="credit-card-number" class="mt-4">Número de segurança</label></div>
-                <div>
-                    <input
-                      class="form-control w-100 mt-4"
-                      name="credit-card-code"
-                      type="text"
-                      placeholder="CVV"
-                      aria-label="codigo"
-                    />
-                </div>
-            </div>
+        <div>
+          <input
+            class="form-control w-100 mt-4"
+            name="credit-card-number"
+            type="text"
+            placeholder="Número do Cartão"
+            aria-label="Número do Cartão"
+            maxlength="19"
+          />
+          <div class="number-icon text-end"></div>
         </div>
-        <button type="submit" value="Submit" class="btn btn-primary mt-4">Pagar</button>
+        <div class="container d-lg-flex justify-content-between">
+          <div>
+            <div>
+              <label for="credit-card-expiration" class="mt-4"
+                >Data de Epiração</label
+              >
+            </div>
+            <div>
+              <input
+                class="form-control w-100 mt-4"
+                name="credit-card-expiration"
+                type="month"
+                placeholder="Data"
+                aria-label="data"
+              />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="credit-card-number" class="mt-4"
+                >Número de segurança</label
+              >
+            </div>
+            <div>
+              <input
+                class="form-control w-100 mt-4"
+                name="credit-card-code"
+                type="text"
+                placeholder="CVV"
+                aria-label="codigo"
+              />
+            </div>
+          </div>
+        </div>
+        <button type="submit" value="Submit" class="btn btn-primary mt-4">
+          Pagar
+        </button>
       </form>
     </div>
-    <script src="./js/finalizar.js" type="module"></script>
+    <div
+      class="container d-flex justify-content-center align-content-center form-payment"
+    ></div>
+    <script src="./js/creditcard.js"></script>
     <script
       src="https://kit.fontawesome.com/189332a467.js"
       crossorigin="anonymous"

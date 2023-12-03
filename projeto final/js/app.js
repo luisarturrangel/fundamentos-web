@@ -124,7 +124,6 @@ class UI {
         });
       }
     });
-    return newUrl
   }
 }
 
