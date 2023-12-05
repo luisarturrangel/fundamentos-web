@@ -13,24 +13,29 @@ class UI {
     products.forEach((item) => {
       if (item.id === id) {
         result = `
-            <div class="card mb-3" style="max-width: auto; min-height: 70vh;">
-            <div class="row">
-                <div class="card-body">
-                    <h2 class="card-title">${item.title}</h2>
-                  </div>
+            <div class="background-container">
+        <div>
+            <div class="container text-center movertransition">
+              <h1>${item.title}</h1>
+              <img src="${item.image}" alt="${item.title}">
+              <div class="container center transitionclick">
+                <h1>${reaisCur.format(item.price)}</h1>
             </div>
-            <div class="row g-0">   
-              <div class="col-md-4">
-                <img src=${item.image} class="img-fluid rounded-start h-100 w-100" alt="...">
-              </div>
-              <div class="col-md-8 row text-center d-flex flex-row align-items-center m-auto">
-                <div>
-                    <h1>${reaisCur.format(item.price)}</h1>
+            <div class="">     
+              <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-id=${item.id} data-bs-target="#myModal">Realizar compra</button>
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                  SOBRE
+              </button>
+              </p>
+            </div>
+            <div style="min-height: 120px;">
+              <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                <div class="card card-body bg-black opacity-50 text-white text-opacity-100 justify-content-center d-flex m-auto" style="width: 300px;">
+              <p>O PRO Wireless foi projetado para ser o melhor mouse para jogos para profissionais de eSports.</p>
                 </div>
-                <div><button class="btn btn-primary cart-btn w-auto m-auto" data-id=${item.id}>Comprar</button></div>
               </div>
-            </div>
-          </div>
+        </div>
           `;
       }
       productInfo.innerHTML = result;
