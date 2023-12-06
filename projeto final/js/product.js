@@ -23,18 +23,6 @@ class UI {
             </div>
             <div class="">     
               <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-id=${item.id} data-bs-target="#myModal">Realizar compra</button>
-              <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                  SOBRE
-              </button>
-              </p>
-            </div>
-            <div style="min-height: 120px;">
-              <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                <div class="card card-body bg-black opacity-50 text-white text-opacity-100 justify-content-center d-flex m-auto" style="width: 300px;">
-              <p>O PRO Wireless foi projetado para ser o melhor mouse para jogos para profissionais de eSports.</p>
-                </div>
-              </div>
         </div>
           `;
       }
