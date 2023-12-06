@@ -315,7 +315,6 @@ class Form {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       let isCreditNumber = isValid(number.value);
-      alert(dateE.value.split("/")[1].trim());
       let isCreditDate = isExpirationDateValid(
         dateE.value.split("/")[0].trim(),
         dateE.value.split("/")[1].trim()
