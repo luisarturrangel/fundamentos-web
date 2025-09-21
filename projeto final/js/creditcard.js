@@ -3,6 +3,14 @@
  * @license MIT
  * @author ContaAzul (contaazul.com)
  */
+
+/* 
+teste
+
+isValid('4916108926268679'); // returns true
+isExpirationDateValid('02', '2020'); // returns true
+isSecurityCodeValid('4556603578296676', '250'); // returns true
+*/
 var CARDS = [
   {
     name: "Banescard",
@@ -326,6 +334,8 @@ class Form {
         <div class="d-flex justify-content-center align-items-center m-2">
           <li class="fas fa-spinner fa-pulse m-0 p-0"></li>
         </div>`;
+        let emptyCart = [];
+        localStorage.setItem("cart", JSON.stringify(emptyCart));
         const sleep = (delay) =>
           new Promise((resolve) => setTimeout(resolve, delay));
         const repeatedGreetings = async () => {
