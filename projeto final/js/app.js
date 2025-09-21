@@ -8,8 +8,6 @@ let reaisCur = new Intl.NumberFormat("pt-br", {
   currency: "BRL",
 });
 
-let cart = [];
-
 let buttonsDom = [];
 
 class Products {
@@ -67,26 +65,26 @@ class UI {
   getButtons() {
     const buttons = [...document.querySelectorAll(".cart-btn")];
     buttonsDom = buttons;
+    let cart = Storage.getCart();
     buttons.forEach((button) => {
       let id = button.dataset.id;
       let inCart = cart.find((item) => item.id === id);
-      Storage.saveCart(cart);
       if (inCart) {
         button.innerText = "No Carrinho";
         button.disabled = true;
-      } else {
-        button.addEventListener("click", (event) => {
-          event.target.innerText = "No Carrinho";
-          event.target.disabled = true;
-          let cartItem = { ...Storage.getProduct(id), amount: 1 };
-          cart = [...cart, cartItem];
+      } 
+      button.addEventListener("click", (event) => {
+        event.target.innerText = "No Carrinho";
+        event.target.disabled = true;
+        let cartItem = { ...Storage.getProduct(id), amount: 1 };
+        cart = [...cart, cartItem];
 
-          Storage.saveCart(cart);
-          this.setCartValues(cart);
-          this.addCartItem(cartItem);
-        });
+        Storage.saveCart(cart);
+        this.setCartValues(cart);
+        this.addCartItem(cartItem);
+      });
       }
-    });
+    );
   }
   setCartValues(cart) {
     let tempTotal = 0;
@@ -125,6 +123,12 @@ class UI {
       }
     });
   }
+
+  setupApp() {
+    const cart = Storage.getCart();
+
+    this.setCartValues(cart);
+  }
 }
 
 class Storage {
@@ -141,6 +145,15 @@ class Storage {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
+  static getCart() {
+    let storageCart = localStorage.getItem("cart")
+    if(storageCart) {
+      return JSON.parse(storageCart);
+    } else {
+      return []
+    }
+  }
+
   static saveItemsTotal(cartNum) {
     localStorage.setItem("totalCart", JSON.stringify(cartNum));
   }
@@ -149,6 +162,8 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   const products = new Products();
+
+  ui.setupApp();
 
   //   get all products
   products.getProducts().then((products) => {
